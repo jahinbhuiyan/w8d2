@@ -30,3 +30,21 @@ Array.prototype.twoSum = function() {
 }
 
 console.log([1,-2,2,3,-3].twoSum());
+
+
+Array.prototype.transpose = function() {
+
+  let transpose = [];
+  for(let i = 0; i < this[0].length ; i++ ) {
+    let column = [];
+    for(let j= 0; j < this.length; j++){
+      column.push(this[j][i]);
+    }
+    transpose.push(column);
+  }
+  return transpose;
+}
+
+console.log([[1,-2],[2,3],[-3,5]].transpose());
+
+
