@@ -29,3 +29,19 @@ function doublecallback(ele){
 
 console.log([1,2,3,4,5,6,7,8,9].myMap(doublecallback));
 
+
+String.prototype.subString = function() {
+let subString = [];
+
+    for(let i = 0 ; i < this.length; i++) {
+        // console.log(this[i],i)
+        for (let j=i+1; j <= this.length; j++ ){
+            // console.log(this[j],j)
+            subString.push(this.slice(i,j));   // slicing doesn't include "j", so we have to go one index beyond j to get j
+        }
+    }
+    return subString
+}
+
+console.log("cat".subString());
+
