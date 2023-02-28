@@ -29,3 +29,17 @@ function doublecallback(ele){
 
 console.log([1,2,3,4,5,6,7,8,9].myMap(doublecallback));
 
+Array.prototype.myReduce = function(callback, initialValue) {
+    let i = (initialValue === undefined ? 1 : 0);
+    initialValue ||= this[0];
+    for(i; i < this.length; i++) {
+        initialValue = callback(initialValue, this[i]);
+    }
+    return initialValue;
+}
+
+function addEle(acc, ele) {
+    return acc + ele;
+}
+
+console.log([1,2,3,4,5].myReduce(addEle, 100));
